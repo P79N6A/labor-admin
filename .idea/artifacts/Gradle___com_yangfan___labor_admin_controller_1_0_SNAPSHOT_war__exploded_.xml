@@ -1,0 +1,40 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Gradle : com.yangfan : labor-admin-controller-1.0-SNAPSHOT.war (exploded)">
+    <output-path>$PROJECT_DIR$/labor-admin-controller/build/libs/exploded/labor-admin-controller-1.0-SNAPSHOT.war</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$">
+        <manifest>TWFuaWZlc3QtVmVyc2lvbjogMS4wDQoNCg==</manifest>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/labor-admin-controller/build/libs/exploded/labor-admin-controller-1.0-SNAPSHOT.war/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="labor-admin-controller_main/web/Web Gradle : labor-admin-controller-1.0-SNAPSHOT.war" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="labor-admin-controller_main" />
+          <element id="dir-copy" path="$PROJECT_DIR$/labor-admin-controller/build/resources/main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="com.yangfan-labor-admin-service-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="labor-admin-service_main" />
+            <element id="dir-copy" path="$PROJECT_DIR$/labor-admin-service/build/resources/main" />
+          </element>
+          <element id="archive" name="com.yangfan-labor-admin-dao-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="labor-admin-dao_main" />
+            <element id="dir-copy" path="$PROJECT_DIR$/labor-admin-dao/build/resources/main" />
+          </element>
+          <element id="archive" name="com.yangfan-labor-admin-entity-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="labor-admin-entity_main" />
+            <element id="dir-copy" path="$PROJECT_DIR$/labor-admin-entity/build/resources/main" />
+          </element>
+          <element id="archive" name="com.yangfan-labor-admin-common-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="labor-admin-common_main" />
+            <element id="dir-copy" path="$PROJECT_DIR$/labor-admin-common/build/resources/main" />
+          </element>
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
