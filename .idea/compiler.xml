@@ -14,6 +14,8 @@
       <module name="labor-admin-entity_test" target="1.8" />
       <module name="labor-admin-service_main" target="1.8" />
       <module name="labor-admin-service_test" target="1.8" />
+      <module name="labor-admin_main" target="1.8" />
+      <module name="labor-admin_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,0 +1,23 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+# IntelliJ project files
+.idea
+*.iml
+*.idea
+out
+gen
+
+.gradle
+.gitignore
+/.classpath
+/.project
+
+build/
+rebel.xml
+classes/
+gradle/
+
+*.txt
+target/
+*.class
+

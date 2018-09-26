@@ -1,3 +1,36 @@
 group 'com.yangfan'
 version '1.0-SNAPSHOT'
 
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+//配置外部属性
+ext {
+    spring_version = "4.1.6.RELEASE"
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    //springmvc + Spring Configuration
+    compile "org.springframework:spring-web:$spring_version"
+    compile "org.springframework:spring-webmvc:$spring_version"
+    compile "org.springframework:spring-aop:$spring_version"
+    compile "org.springframework:spring-aspects:$spring_version"
+    compile "org.springframework:spring-beans:$spring_version"
+    compile "org.springframework:spring-context:$spring_version"
+    compile "org.springframework:spring-context-support:$spring_version"
+    compile "org.springframework:spring-core:$spring_version"
+    compile "org.springframework:spring-expression:$spring_version"
+    compile "org.springframework:spring-jdbc:$spring_version"
+    compile "org.springframework:spring-messaging:$spring_version"
+    compile "org.springframework:spring-orm:$spring_version"
+    compile "org.springframework:spring-tx:$spring_version"
+    compile "org.springframework:spring-test:$spring_version"
+
+}

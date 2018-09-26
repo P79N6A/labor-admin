@@ -18,6 +18,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/labor-admin-service.iml" filepath="$PROJECT_DIR$/.idea/modules/labor-admin-service.iml" group="labor-admin-service" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/labor-admin-service/labor-admin-service_main.iml" filepath="$PROJECT_DIR$/.idea/modules/labor-admin-service/labor-admin-service_main.iml" group="labor-admin-service" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/labor-admin-service/labor-admin-service_test.iml" filepath="$PROJECT_DIR$/.idea/modules/labor-admin-service/labor-admin-service_test.iml" group="labor-admin-service" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/labor-admin_main.iml" filepath="$PROJECT_DIR$/.idea/modules/labor-admin_main.iml" group="labor-admin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/labor-admin_test.iml" filepath="$PROJECT_DIR$/.idea/modules/labor-admin_test.iml" group="labor-admin" />
     </modules>
   </component>
 </project>
