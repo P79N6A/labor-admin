@@ -1,7 +1,0 @@
-rootProject.name = 'labor-admin'
-include 'labor-admin-common'
-include 'labor-admin-dao'
-include 'labor-admin-entity'
-include 'labor-admin-service'
-include 'labor-admin-webapp'
-
