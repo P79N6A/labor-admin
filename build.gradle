@@ -1,0 +1,19 @@
+group 'com.yangfan'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+
+ext {
+    springVersion = '4.3.10.RELEASE'
+}
+
+repositories {
+    maven { url "http://mvn1.tools.vipshop.com/nexus/content/groups/public" }
+
+    mavenCentral()
+}
+
+

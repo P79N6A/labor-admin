@@ -1,0 +1,23 @@
+group 'com.yangfan'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+repositories {
+    maven { url "http://mvn1.tools.vipshop.com/nexus/content/groups/public" }
+
+    mavenCentral()
+}
+
+dependencies {
+
+    compile project(":labor-admin-service")
+    compile(
+            "org.springframework:spring-webmvc:$springVersion",
+            "org.springframework:spring-core:$springVersion",
+            "org.springframework:spring-beans:$springVersion",
+            "org.springframework:spring-context-support:$springVersion"
+    )
+
+}
