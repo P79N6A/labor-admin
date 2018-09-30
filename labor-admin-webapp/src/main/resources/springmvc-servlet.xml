@@ -13,6 +13,9 @@
         http://www.springframework.org/schema/task
         http://www.springframework.org/schema/task/spring-task-4.3.xsd">
   <!-- 扫描路径 -->
-  <context:component-scan base-package="com.yangfan.labor.controller">
-  </context:component-scan>
+  <context:component-scan base-package="com.yangfan.labor.controller"></context:component-scan>
+  
+  <!--默认的注解映射的支持-->
+  <mvc:annotation-driven/>
+
 </beans>
