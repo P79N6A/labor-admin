@@ -13,11 +13,5 @@ repositories {
 dependencies {
 
     compile project(":labor-admin-service")
-    compile(
-            "org.springframework:spring-webmvc:$springVersion",
-            "org.springframework:spring-core:$springVersion",
-            "org.springframework:spring-beans:$springVersion",
-            "org.springframework:spring-context-support:$springVersion"
-    )
 
 }

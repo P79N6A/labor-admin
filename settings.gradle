@@ -1,4 +1,5 @@
 rootProject.name = 'labor-admin'
 include 'labor-admin-service'
 include 'labor-admin-webapp'
+include 'labor-admin-dao'
 
