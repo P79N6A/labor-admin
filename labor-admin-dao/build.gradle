@@ -28,7 +28,7 @@ dependencies {
             "com.alibaba:druid:1.0.15"
     )
     mybatisGenerator 'org.mybatis.generator:mybatis-generator-core:1.3.5'
-    mybatisGenerator 'mysql:mysql-connector-java:5.1.40'
+    mybatisGenerator 'mysql:mysql-connector-java:5.1.38'
     mybatisGenerator 'tk.mybatis:mapper:3.3.9'
 }
 

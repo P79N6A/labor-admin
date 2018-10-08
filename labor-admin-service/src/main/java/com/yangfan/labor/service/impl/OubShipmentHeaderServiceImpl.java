@@ -16,10 +16,15 @@ public class OubShipmentHeaderServiceImpl implements OubShipmentHeaderService {
     @Autowired
     private OubShipmentHeaderRepository oubShipmentHeaderRepo;
 
+//    @Autowired
+//    private OubShipmentDetailMapper oubShipmentDetailMapper;
+
     @Override
     public String hello() {
         OubShipmentHeader oubShipmentHeader = oubShipmentHeaderRepo.selectByPrimaryKey((long) 1673);
         oubShipmentHeader.getShipmentNo();
+
+//        oubShipmentDetailMapper.selectByPrimaryKey((long) 1673);
         return "hello"+oubShipmentHeader.getShipmentNo();
     }
 }
