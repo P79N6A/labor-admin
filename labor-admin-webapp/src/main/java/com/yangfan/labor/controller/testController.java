@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.yangfan.labor.service.student.TestService;
+import com.yangfan.labor.service.OubShipmentHeaderService;
 
 /**
  * Created by leo01.zhu on 2018/9/29.
@@ -14,12 +14,12 @@ import com.yangfan.labor.service.student.TestService;
 public class testController {
 
     @Autowired
-    private TestService testService;
+    private OubShipmentHeaderService oubShipmentHeaderService;
 
     @ResponseBody
     @RequestMapping("/greeting")
     public String hello() {
 
-        return testService.hello();
+        return oubShipmentHeaderService.hello();
     }
 }
