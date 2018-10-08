@@ -58,7 +58,7 @@
   
   <!--Mybatis的Mapper文件识别 -->
   <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-    <property name="basePackage" value="com.yangfan.labor.repository"/>
+    <property name="basePackage" value="com.yangfan.labor.mapper"/>
     <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     <property name="annotationClass" value="org.springframework.stereotype.Repository"/>
   </bean>

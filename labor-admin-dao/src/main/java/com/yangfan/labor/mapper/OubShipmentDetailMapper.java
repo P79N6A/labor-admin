@@ -1,4 +1,4 @@
-package com.yangfan.labor.repository;
+package com.yangfan.labor.mapper;
 
 import com.yangfan.labor.entity.OubShipmentDetail;
 import java.util.List;

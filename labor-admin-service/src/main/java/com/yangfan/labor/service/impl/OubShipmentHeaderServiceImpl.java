@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.yangfan.labor.entity.OubShipmentDetail;
-import com.yangfan.labor.repository.OubShipmentDetailMapper;
+import com.yangfan.labor.mapper.OubShipmentDetailMapper;
 import com.yangfan.labor.service.OubShipmentHeaderService;
 
 /**
@@ -27,6 +27,10 @@ public class OubShipmentHeaderServiceImpl implements OubShipmentHeaderService {
 //        oubShipmentHeader.getShipmentNo();
 
         OubShipmentDetail oubShipmentDetail = oubShipmentDetailMapper.selectByPrimaryKey((long) 1673);
-        return "hello:"+oubShipmentDetail.getShipmentNo();
+        String shipmentNo = "";
+        if (null != oubShipmentDetail) {
+            shipmentNo = oubShipmentDetail.getShipmentNo();
+        }
+        return "hello:" + shipmentNo;
     }
 }
