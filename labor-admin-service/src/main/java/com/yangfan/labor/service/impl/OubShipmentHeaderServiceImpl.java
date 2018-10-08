@@ -2,29 +2,30 @@ package com.yangfan.labor.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.yangfan.labor.entity.OubShipmentHeader;
-import com.yangfan.labor.repository.OubShipmentHeaderRepository;
+import com.yangfan.labor.repository.OubShipmentDetailMapper;
 import com.yangfan.labor.service.OubShipmentHeaderService;
 
 /**
  * Created by leo01.zhu on 2018/9/30.
  */
 @Service
+@Transactional
 public class OubShipmentHeaderServiceImpl implements OubShipmentHeaderService {
 
-    @Autowired
-    private OubShipmentHeaderRepository oubShipmentHeaderRepo;
-
 //    @Autowired
-//    private OubShipmentDetailMapper oubShipmentDetailMapper;
+//    private OubShipmentHeaderRepository oubShipmentHeaderRepo;
+
+    @Autowired
+    private OubShipmentDetailMapper oubShipmentDetailMapper;
 
     @Override
     public String hello() {
-        OubShipmentHeader oubShipmentHeader = oubShipmentHeaderRepo.selectByPrimaryKey((long) 1673);
-        oubShipmentHeader.getShipmentNo();
+//        OubShipmentHeader oubShipmentHeader = oubShipmentHeaderRepo.selectByPrimaryKey((long) 1673);
+//        oubShipmentHeader.getShipmentNo();
 
-//        oubShipmentDetailMapper.selectByPrimaryKey((long) 1673);
-        return "hello"+oubShipmentHeader.getShipmentNo();
+        oubShipmentDetailMapper.selectByPrimaryKey((long) 1673);
+        return "hello";
     }
 }

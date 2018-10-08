@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yangfan.labor.repository.OubShipmentDetailMapper">
+  <resultMap id="BaseResultMap" type="com.yangfan.labor.entity.OubShipmentDetail">
+    <id column="oub_shipment_detail_id" jdbcType="BIGINT" property="oubShipmentDetailId" />
+    <result column="oub_shipment_header_id" jdbcType="BIGINT" property="oubShipmentHeaderId" />
+    <result column="shipment_no" jdbcType="VARCHAR" property="shipmentNo" />
+    <result column="shipment_line_no" jdbcType="INTEGER" property="shipmentLineNo" />
+    <result column="warehouse_code" jdbcType="VARCHAR" property="warehouseCode" />
+    <result column="status_code" jdbcType="SMALLINT" property="statusCode" />
+    <result column="erp_order_no" jdbcType="VARCHAR" property="erpOrderNo" />
+    <result column="erp_order_line_no" jdbcType="VARCHAR" property="erpOrderLineNo" />
+    <result column="item_code" jdbcType="VARCHAR" property="itemCode" />
+    <result column="item_name" jdbcType="VARCHAR" property="itemName" />
+    <result column="client_code" jdbcType="VARCHAR" property="clientCode" />
+    <result column="client_name" jdbcType="VARCHAR" property="clientName" />
+    <result column="inventory_type" jdbcType="VARCHAR" property="inventoryType" />
+    <result column="batch_no" jdbcType="VARCHAR" property="batchNo" />
+    <result column="inventory_quality" jdbcType="VARCHAR" property="inventoryQuality" />
+    <result column="country_of_origin" jdbcType="VARCHAR" property="countryOfOrigin" />
+    <result column="exp_date" jdbcType="DATE" property="expDate" />
+    <result column="mfg_date" jdbcType="DATE" property="mfgDate" />
+    <result column="received_date" jdbcType="DATE" property="receivedDate" />
+    <result column="po_no" jdbcType="VARCHAR" property="poNo" />
+    <result column="sales_no" jdbcType="VARCHAR" property="salesNo" />
+    <result column="sales_status" jdbcType="VARCHAR" property="salesStatus" />
+    <result column="inventory_status" jdbcType="BIT" property="inventoryStatus" />
+    <result column="brand_code" jdbcType="VARCHAR" property="brandCode" />
+    <result column="brand_name" jdbcType="VARCHAR" property="brandName" />
+    <result column="vendor_code" jdbcType="VARCHAR" property="vendorCode" />
+    <result column="vendor_name" jdbcType="VARCHAR" property="vendorName" />
+    <result column="req_qty" jdbcType="DECIMAL" property="reqQty" />
+    <result column="req_uom" jdbcType="VARCHAR" property="reqUom" />
+    <result column="orig_allocation_qty" jdbcType="DECIMAL" property="origAllocationQty" />
+    <result column="allocation_qty" jdbcType="DECIMAL" property="allocationQty" />
+    <result column="allocation_uom" jdbcType="VARCHAR" property="allocationUom" />
+    <result column="picked_qty" jdbcType="DECIMAL" property="pickedQty" />
+    <result column="picked_uom" jdbcType="VARCHAR" property="pickedUom" />
+    <result column="oqc_qty" jdbcType="DECIMAL" property="oqcQty" />
+    <result column="oqc_uom" jdbcType="VARCHAR" property="oqcUom" />
+    <result column="sorting_qty" jdbcType="DECIMAL" property="sortingQty" />
+    <result column="sorting_ep_qty" jdbcType="DECIMAL" property="sortingEpQty" />
+    <result column="sorting_uom" jdbcType="VARCHAR" property="sortingUom" />
+    <result column="oub_qty" jdbcType="DECIMAL" property="oubQty" />
+    <result column="oub_uom" jdbcType="VARCHAR" property="oubUom" />
+    <result column="oub_date" jdbcType="TIMESTAMP" property="oubDate" />
+    <result column="oub_user" jdbcType="VARCHAR" property="oubUser" />
+    <result column="priority" jdbcType="VARCHAR" property="priority" />
+    <result column="exception_type" jdbcType="VARCHAR" property="exceptionType" />
+    <result column="exception_desc" jdbcType="VARCHAR" property="exceptionDesc" />
+    <result column="exception_approach" jdbcType="VARCHAR" property="exceptionApproach" />
+    <result column="exception_qty" jdbcType="DECIMAL" property="exceptionQty" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="item_retail_price" jdbcType="DECIMAL" property="itemRetailPrice" />
+    <result column="item_net_price" jdbcType="DECIMAL" property="itemNetPrice" />
+    <result column="req_weight" jdbcType="DECIMAL" property="reqWeight" />
+    <result column="weight_uom" jdbcType="VARCHAR" property="weightUom" />
+    <result column="item_class_code" jdbcType="VARCHAR" property="itemClassCode" />
+    <result column="is_gift" jdbcType="BIT" property="isGift" />
+    <result column="is_immediate_need" jdbcType="BIT" property="isImmediateNeed" />
+    <result column="ec_mode" jdbcType="VARCHAR" property="ecMode" />
+    <result column="req_volume" jdbcType="DECIMAL" property="reqVolume" />
+    <result column="req_volume_uom" jdbcType="VARCHAR" property="reqVolumeUom" />
+    <result column="brand_type" jdbcType="VARCHAR" property="brandType" />
+    <result column="channel_type" jdbcType="VARCHAR" property="channelType" />
+    <result column="fulfillment_type" jdbcType="VARCHAR" property="fulfillmentType" />
+    <result column="item_size" jdbcType="VARCHAR" property="itemSize" />
+    <result column="package_code" jdbcType="VARCHAR" property="packageCode" />
+    <result column="package_name" jdbcType="VARCHAR" property="packageName" />
+    <result column="return_max_uom" jdbcType="VARCHAR" property="returnMaxUom" />
+    <result column="return_max_qty" jdbcType="DECIMAL" property="returnMaxQty" />
+    <result column="oqc_itemscan_field1" jdbcType="VARCHAR" property="oqcItemscanField1" />
+    <result column="oqc_itemscan_value1" jdbcType="VARCHAR" property="oqcItemscanValue1" />
+    <result column="oqc_itemscan_field2" jdbcType="VARCHAR" property="oqcItemscanField2" />
+    <result column="oqc_itemscan_value2" jdbcType="VARCHAR" property="oqcItemscanValue2" />
+    <result column="oqc_column_field1" jdbcType="VARCHAR" property="oqcColumnField1" />
+    <result column="oqc_column_value1" jdbcType="VARCHAR" property="oqcColumnValue1" />
+    <result column="oqc_column_field2" jdbcType="VARCHAR" property="oqcColumnField2" />
+    <result column="oqc_column_value2" jdbcType="VARCHAR" property="oqcColumnValue2" />
+    <result column="oqc_itemdesc_value1" jdbcType="VARCHAR" property="oqcItemdescValue1" />
+    <result column="oqc_itemdesc_value2" jdbcType="VARCHAR" property="oqcItemdescValue2" />
+    <result column="no_po" jdbcType="SMALLINT" property="noPo" />
+    <result column="en_company_desc" jdbcType="VARCHAR" property="enCompanyDesc" />
+    <result column="en_item_desc" jdbcType="VARCHAR" property="enItemDesc" />
+    <result column="gross_weight" jdbcType="DECIMAL" property="grossWeight" />
+    <result column="sale_brand_id" jdbcType="VARCHAR" property="saleBrandId" />
+    <result column="reserved_qty" jdbcType="DECIMAL" property="reservedQty" />
+    <result column="inv_lot_id" jdbcType="BIGINT" property="invLotId" />
+    <result column="lot_attr1" jdbcType="VARCHAR" property="lotAttr1" />
+    <result column="lot_attr2" jdbcType="VARCHAR" property="lotAttr2" />
+    <result column="lot_attr3" jdbcType="VARCHAR" property="lotAttr3" />
+    <result column="lot_attr4" jdbcType="VARCHAR" property="lotAttr4" />
+    <result column="lot_attr5" jdbcType="VARCHAR" property="lotAttr5" />
+    <result column="lot_attr6" jdbcType="VARCHAR" property="lotAttr6" />
+    <result column="lot_attr7" jdbcType="VARCHAR" property="lotAttr7" />
+    <result column="lot_attr8" jdbcType="VARCHAR" property="lotAttr8" />
+    <result column="lot_attr9" jdbcType="DECIMAL" property="lotAttr9" />
+    <result column="lot_attr10" jdbcType="DECIMAL" property="lotAttr10" />
+    <result column="lot_attr11" jdbcType="DECIMAL" property="lotAttr11" />
+    <result column="lot_attr12" jdbcType="DECIMAL" property="lotAttr12" />
+    <result column="lot_attr13" jdbcType="DATE" property="lotAttr13" />
+    <result column="lot_attr14" jdbcType="DATE" property="lotAttr14" />
+    <result column="lot_attr15" jdbcType="DATE" property="lotAttr15" />
+    <result column="lot_attr16" jdbcType="DATE" property="lotAttr16" />
+    <result column="user_def1" jdbcType="VARCHAR" property="userDef1" />
+    <result column="user_def2" jdbcType="VARCHAR" property="userDef2" />
+    <result column="user_def3" jdbcType="VARCHAR" property="userDef3" />
+    <result column="user_def4" jdbcType="VARCHAR" property="userDef4" />
+    <result column="user_def5" jdbcType="VARCHAR" property="userDef5" />
+    <result column="user_def6" jdbcType="VARCHAR" property="userDef6" />
+    <result column="user_def7" jdbcType="TIMESTAMP" property="userDef7" />
+    <result column="user_def8" jdbcType="TIMESTAMP" property="userDef8" />
+    <result column="user_def9" jdbcType="DECIMAL" property="userDef9" />
+    <result column="user_def10" jdbcType="DECIMAL" property="userDef10" />
+    <result column="goods_line_money" jdbcType="DECIMAL" property="goodsLineMoney" />
+    <result column="from_warehouse_code" jdbcType="VARCHAR" property="fromWarehouseCode" />
+    <result column="goods_pic" jdbcType="VARCHAR" property="goodsPic" />
+    <result column="created_by_user_id" jdbcType="BIGINT" property="createdByUserId" />
+    <result column="created_by_user" jdbcType="VARCHAR" property="createdByUser" />
+    <result column="created_office" jdbcType="VARCHAR" property="createdOffice" />
+    <result column="created_dtm_loc" jdbcType="TIMESTAMP" property="createdDtmLoc" />
+    <result column="created_time_zone" jdbcType="VARCHAR" property="createdTimeZone" />
+    <result column="updated_by_user_id" jdbcType="BIGINT" property="updatedByUserId" />
+    <result column="updated_by_user" jdbcType="VARCHAR" property="updatedByUser" />
+    <result column="updated_office" jdbcType="VARCHAR" property="updatedOffice" />
+    <result column="updated_dtm_loc" jdbcType="TIMESTAMP" property="updatedDtmLoc" />
+    <result column="updated_time_zone" jdbcType="VARCHAR" property="updatedTimeZone" />
+    <result column="record_version" jdbcType="BIGINT" property="recordVersion" />
+    <result column="container_code" jdbcType="VARCHAR" property="containerCode" />
+    <result column="owner_code" jdbcType="VARCHAR" property="ownerCode" />
+    <result column="sales_type_flag" jdbcType="TINYINT" property="salesTypeFlag" />
+    <result column="not_allow_return" jdbcType="TINYINT" property="notAllowReturn" />
+    <result column="inventory_group" jdbcType="TINYINT" property="inventoryGroup" />
+    <result column="serial_no" jdbcType="VARCHAR" property="serialNo" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from oub_shipment_detail
+    where oub_shipment_detail_id = #{oubShipmentDetailId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.yangfan.labor.entity.OubShipmentDetail">
+    insert into oub_shipment_detail (oub_shipment_detail_id, oub_shipment_header_id, 
+      shipment_no, shipment_line_no, warehouse_code, 
+      status_code, erp_order_no, erp_order_line_no, 
+      item_code, item_name, client_code, 
+      client_name, inventory_type, batch_no, 
+      inventory_quality, country_of_origin, exp_date, 
+      mfg_date, received_date, po_no, 
+      sales_no, sales_status, inventory_status, 
+      brand_code, brand_name, vendor_code, 
+      vendor_name, req_qty, req_uom, 
+      orig_allocation_qty, allocation_qty, allocation_uom, 
+      picked_qty, picked_uom, oqc_qty, 
+      oqc_uom, sorting_qty, sorting_ep_qty, 
+      sorting_uom, oub_qty, oub_uom, 
+      oub_date, oub_user, priority, 
+      exception_type, exception_desc, exception_approach, 
+      exception_qty, price, item_retail_price, 
+      item_net_price, req_weight, weight_uom, 
+      item_class_code, is_gift, is_immediate_need, 
+      ec_mode, req_volume, req_volume_uom, 
+      brand_type, channel_type, fulfillment_type, 
+      item_size, package_code, package_name, 
+      return_max_uom, return_max_qty, oqc_itemscan_field1, 
+      oqc_itemscan_value1, oqc_itemscan_field2, oqc_itemscan_value2, 
+      oqc_column_field1, oqc_column_value1, oqc_column_field2, 
+      oqc_column_value2, oqc_itemdesc_value1, oqc_itemdesc_value2, 
+      no_po, en_company_desc, en_item_desc, 
+      gross_weight, sale_brand_id, reserved_qty, 
+      inv_lot_id, lot_attr1, lot_attr2, 
+      lot_attr3, lot_attr4, lot_attr5, 
+      lot_attr6, lot_attr7, lot_attr8, 
+      lot_attr9, lot_attr10, lot_attr11, 
+      lot_attr12, lot_attr13, lot_attr14, 
+      lot_attr15, lot_attr16, user_def1, 
+      user_def2, user_def3, user_def4, 
+      user_def5, user_def6, user_def7, 
+      user_def8, user_def9, user_def10, 
+      goods_line_money, from_warehouse_code, goods_pic, 
+      created_by_user_id, created_by_user, created_office, 
+      created_dtm_loc, created_time_zone, updated_by_user_id, 
+      updated_by_user, updated_office, updated_dtm_loc, 
+      updated_time_zone, record_version, container_code, 
+      owner_code, sales_type_flag, not_allow_return, 
+      inventory_group, serial_no)
+    values (#{oubShipmentDetailId,jdbcType=BIGINT}, #{oubShipmentHeaderId,jdbcType=BIGINT}, 
+      #{shipmentNo,jdbcType=VARCHAR}, #{shipmentLineNo,jdbcType=INTEGER}, #{warehouseCode,jdbcType=VARCHAR}, 
+      #{statusCode,jdbcType=SMALLINT}, #{erpOrderNo,jdbcType=VARCHAR}, #{erpOrderLineNo,jdbcType=VARCHAR}, 
+      #{itemCode,jdbcType=VARCHAR}, #{itemName,jdbcType=VARCHAR}, #{clientCode,jdbcType=VARCHAR}, 
+      #{clientName,jdbcType=VARCHAR}, #{inventoryType,jdbcType=VARCHAR}, #{batchNo,jdbcType=VARCHAR}, 
+      #{inventoryQuality,jdbcType=VARCHAR}, #{countryOfOrigin,jdbcType=VARCHAR}, #{expDate,jdbcType=DATE}, 
+      #{mfgDate,jdbcType=DATE}, #{receivedDate,jdbcType=DATE}, #{poNo,jdbcType=VARCHAR}, 
+      #{salesNo,jdbcType=VARCHAR}, #{salesStatus,jdbcType=VARCHAR}, #{inventoryStatus,jdbcType=BIT}, 
+      #{brandCode,jdbcType=VARCHAR}, #{brandName,jdbcType=VARCHAR}, #{vendorCode,jdbcType=VARCHAR}, 
+      #{vendorName,jdbcType=VARCHAR}, #{reqQty,jdbcType=DECIMAL}, #{reqUom,jdbcType=VARCHAR}, 
+      #{origAllocationQty,jdbcType=DECIMAL}, #{allocationQty,jdbcType=DECIMAL}, #{allocationUom,jdbcType=VARCHAR}, 
+      #{pickedQty,jdbcType=DECIMAL}, #{pickedUom,jdbcType=VARCHAR}, #{oqcQty,jdbcType=DECIMAL}, 
+      #{oqcUom,jdbcType=VARCHAR}, #{sortingQty,jdbcType=DECIMAL}, #{sortingEpQty,jdbcType=DECIMAL}, 
+      #{sortingUom,jdbcType=VARCHAR}, #{oubQty,jdbcType=DECIMAL}, #{oubUom,jdbcType=VARCHAR}, 
+      #{oubDate,jdbcType=TIMESTAMP}, #{oubUser,jdbcType=VARCHAR}, #{priority,jdbcType=VARCHAR}, 
+      #{exceptionType,jdbcType=VARCHAR}, #{exceptionDesc,jdbcType=VARCHAR}, #{exceptionApproach,jdbcType=VARCHAR}, 
+      #{exceptionQty,jdbcType=DECIMAL}, #{price,jdbcType=DECIMAL}, #{itemRetailPrice,jdbcType=DECIMAL}, 
+      #{itemNetPrice,jdbcType=DECIMAL}, #{reqWeight,jdbcType=DECIMAL}, #{weightUom,jdbcType=VARCHAR}, 
+      #{itemClassCode,jdbcType=VARCHAR}, #{isGift,jdbcType=BIT}, #{isImmediateNeed,jdbcType=BIT}, 
+      #{ecMode,jdbcType=VARCHAR}, #{reqVolume,jdbcType=DECIMAL}, #{reqVolumeUom,jdbcType=VARCHAR}, 
+      #{brandType,jdbcType=VARCHAR}, #{channelType,jdbcType=VARCHAR}, #{fulfillmentType,jdbcType=VARCHAR}, 
+      #{itemSize,jdbcType=VARCHAR}, #{packageCode,jdbcType=VARCHAR}, #{packageName,jdbcType=VARCHAR}, 
+      #{returnMaxUom,jdbcType=VARCHAR}, #{returnMaxQty,jdbcType=DECIMAL}, #{oqcItemscanField1,jdbcType=VARCHAR}, 
+      #{oqcItemscanValue1,jdbcType=VARCHAR}, #{oqcItemscanField2,jdbcType=VARCHAR}, #{oqcItemscanValue2,jdbcType=VARCHAR}, 
+      #{oqcColumnField1,jdbcType=VARCHAR}, #{oqcColumnValue1,jdbcType=VARCHAR}, #{oqcColumnField2,jdbcType=VARCHAR}, 
+      #{oqcColumnValue2,jdbcType=VARCHAR}, #{oqcItemdescValue1,jdbcType=VARCHAR}, #{oqcItemdescValue2,jdbcType=VARCHAR}, 
+      #{noPo,jdbcType=SMALLINT}, #{enCompanyDesc,jdbcType=VARCHAR}, #{enItemDesc,jdbcType=VARCHAR}, 
+      #{grossWeight,jdbcType=DECIMAL}, #{saleBrandId,jdbcType=VARCHAR}, #{reservedQty,jdbcType=DECIMAL}, 
+      #{invLotId,jdbcType=BIGINT}, #{lotAttr1,jdbcType=VARCHAR}, #{lotAttr2,jdbcType=VARCHAR}, 
+      #{lotAttr3,jdbcType=VARCHAR}, #{lotAttr4,jdbcType=VARCHAR}, #{lotAttr5,jdbcType=VARCHAR}, 
+      #{lotAttr6,jdbcType=VARCHAR}, #{lotAttr7,jdbcType=VARCHAR}, #{lotAttr8,jdbcType=VARCHAR}, 
+      #{lotAttr9,jdbcType=DECIMAL}, #{lotAttr10,jdbcType=DECIMAL}, #{lotAttr11,jdbcType=DECIMAL}, 
+      #{lotAttr12,jdbcType=DECIMAL}, #{lotAttr13,jdbcType=DATE}, #{lotAttr14,jdbcType=DATE}, 
+      #{lotAttr15,jdbcType=DATE}, #{lotAttr16,jdbcType=DATE}, #{userDef1,jdbcType=VARCHAR}, 
+      #{userDef2,jdbcType=VARCHAR}, #{userDef3,jdbcType=VARCHAR}, #{userDef4,jdbcType=VARCHAR}, 
+      #{userDef5,jdbcType=VARCHAR}, #{userDef6,jdbcType=VARCHAR}, #{userDef7,jdbcType=TIMESTAMP}, 
+      #{userDef8,jdbcType=TIMESTAMP}, #{userDef9,jdbcType=DECIMAL}, #{userDef10,jdbcType=DECIMAL}, 
+      #{goodsLineMoney,jdbcType=DECIMAL}, #{fromWarehouseCode,jdbcType=VARCHAR}, #{goodsPic,jdbcType=VARCHAR}, 
+      #{createdByUserId,jdbcType=BIGINT}, #{createdByUser,jdbcType=VARCHAR}, #{createdOffice,jdbcType=VARCHAR}, 
+      #{createdDtmLoc,jdbcType=TIMESTAMP}, #{createdTimeZone,jdbcType=VARCHAR}, #{updatedByUserId,jdbcType=BIGINT}, 
+      #{updatedByUser,jdbcType=VARCHAR}, #{updatedOffice,jdbcType=VARCHAR}, #{updatedDtmLoc,jdbcType=TIMESTAMP}, 
+      #{updatedTimeZone,jdbcType=VARCHAR}, #{recordVersion,jdbcType=BIGINT}, #{containerCode,jdbcType=VARCHAR}, 
+      #{ownerCode,jdbcType=VARCHAR}, #{salesTypeFlag,jdbcType=TINYINT}, #{notAllowReturn,jdbcType=TINYINT}, 
+      #{inventoryGroup,jdbcType=TINYINT}, #{serialNo,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.yangfan.labor.entity.OubShipmentDetail">
+    update oub_shipment_detail
+    set oub_shipment_header_id = #{oubShipmentHeaderId,jdbcType=BIGINT},
+      shipment_no = #{shipmentNo,jdbcType=VARCHAR},
+      shipment_line_no = #{shipmentLineNo,jdbcType=INTEGER},
+      warehouse_code = #{warehouseCode,jdbcType=VARCHAR},
+      status_code = #{statusCode,jdbcType=SMALLINT},
+      erp_order_no = #{erpOrderNo,jdbcType=VARCHAR},
+      erp_order_line_no = #{erpOrderLineNo,jdbcType=VARCHAR},
+      item_code = #{itemCode,jdbcType=VARCHAR},
+      item_name = #{itemName,jdbcType=VARCHAR},
+      client_code = #{clientCode,jdbcType=VARCHAR},
+      client_name = #{clientName,jdbcType=VARCHAR},
+      inventory_type = #{inventoryType,jdbcType=VARCHAR},
+      batch_no = #{batchNo,jdbcType=VARCHAR},
+      inventory_quality = #{inventoryQuality,jdbcType=VARCHAR},
+      country_of_origin = #{countryOfOrigin,jdbcType=VARCHAR},
+      exp_date = #{expDate,jdbcType=DATE},
+      mfg_date = #{mfgDate,jdbcType=DATE},
+      received_date = #{receivedDate,jdbcType=DATE},
+      po_no = #{poNo,jdbcType=VARCHAR},
+      sales_no = #{salesNo,jdbcType=VARCHAR},
+      sales_status = #{salesStatus,jdbcType=VARCHAR},
+      inventory_status = #{inventoryStatus,jdbcType=BIT},
+      brand_code = #{brandCode,jdbcType=VARCHAR},
+      brand_name = #{brandName,jdbcType=VARCHAR},
+      vendor_code = #{vendorCode,jdbcType=VARCHAR},
+      vendor_name = #{vendorName,jdbcType=VARCHAR},
+      req_qty = #{reqQty,jdbcType=DECIMAL},
+      req_uom = #{reqUom,jdbcType=VARCHAR},
+      orig_allocation_qty = #{origAllocationQty,jdbcType=DECIMAL},
+      allocation_qty = #{allocationQty,jdbcType=DECIMAL},
+      allocation_uom = #{allocationUom,jdbcType=VARCHAR},
+      picked_qty = #{pickedQty,jdbcType=DECIMAL},
+      picked_uom = #{pickedUom,jdbcType=VARCHAR},
+      oqc_qty = #{oqcQty,jdbcType=DECIMAL},
+      oqc_uom = #{oqcUom,jdbcType=VARCHAR},
+      sorting_qty = #{sortingQty,jdbcType=DECIMAL},
+      sorting_ep_qty = #{sortingEpQty,jdbcType=DECIMAL},
+      sorting_uom = #{sortingUom,jdbcType=VARCHAR},
+      oub_qty = #{oubQty,jdbcType=DECIMAL},
+      oub_uom = #{oubUom,jdbcType=VARCHAR},
+      oub_date = #{oubDate,jdbcType=TIMESTAMP},
+      oub_user = #{oubUser,jdbcType=VARCHAR},
+      priority = #{priority,jdbcType=VARCHAR},
+      exception_type = #{exceptionType,jdbcType=VARCHAR},
+      exception_desc = #{exceptionDesc,jdbcType=VARCHAR},
+      exception_approach = #{exceptionApproach,jdbcType=VARCHAR},
+      exception_qty = #{exceptionQty,jdbcType=DECIMAL},
+      price = #{price,jdbcType=DECIMAL},
+      item_retail_price = #{itemRetailPrice,jdbcType=DECIMAL},
+      item_net_price = #{itemNetPrice,jdbcType=DECIMAL},
+      req_weight = #{reqWeight,jdbcType=DECIMAL},
+      weight_uom = #{weightUom,jdbcType=VARCHAR},
+      item_class_code = #{itemClassCode,jdbcType=VARCHAR},
+      is_gift = #{isGift,jdbcType=BIT},
+      is_immediate_need = #{isImmediateNeed,jdbcType=BIT},
+      ec_mode = #{ecMode,jdbcType=VARCHAR},
+      req_volume = #{reqVolume,jdbcType=DECIMAL},
+      req_volume_uom = #{reqVolumeUom,jdbcType=VARCHAR},
+      brand_type = #{brandType,jdbcType=VARCHAR},
+      channel_type = #{channelType,jdbcType=VARCHAR},
+      fulfillment_type = #{fulfillmentType,jdbcType=VARCHAR},
+      item_size = #{itemSize,jdbcType=VARCHAR},
+      package_code = #{packageCode,jdbcType=VARCHAR},
+      package_name = #{packageName,jdbcType=VARCHAR},
+      return_max_uom = #{returnMaxUom,jdbcType=VARCHAR},
+      return_max_qty = #{returnMaxQty,jdbcType=DECIMAL},
+      oqc_itemscan_field1 = #{oqcItemscanField1,jdbcType=VARCHAR},
+      oqc_itemscan_value1 = #{oqcItemscanValue1,jdbcType=VARCHAR},
+      oqc_itemscan_field2 = #{oqcItemscanField2,jdbcType=VARCHAR},
+      oqc_itemscan_value2 = #{oqcItemscanValue2,jdbcType=VARCHAR},
+      oqc_column_field1 = #{oqcColumnField1,jdbcType=VARCHAR},
+      oqc_column_value1 = #{oqcColumnValue1,jdbcType=VARCHAR},
+      oqc_column_field2 = #{oqcColumnField2,jdbcType=VARCHAR},
+      oqc_column_value2 = #{oqcColumnValue2,jdbcType=VARCHAR},
+      oqc_itemdesc_value1 = #{oqcItemdescValue1,jdbcType=VARCHAR},
+      oqc_itemdesc_value2 = #{oqcItemdescValue2,jdbcType=VARCHAR},
+      no_po = #{noPo,jdbcType=SMALLINT},
+      en_company_desc = #{enCompanyDesc,jdbcType=VARCHAR},
+      en_item_desc = #{enItemDesc,jdbcType=VARCHAR},
+      gross_weight = #{grossWeight,jdbcType=DECIMAL},
+      sale_brand_id = #{saleBrandId,jdbcType=VARCHAR},
+      reserved_qty = #{reservedQty,jdbcType=DECIMAL},
+      inv_lot_id = #{invLotId,jdbcType=BIGINT},
+      lot_attr1 = #{lotAttr1,jdbcType=VARCHAR},
+      lot_attr2 = #{lotAttr2,jdbcType=VARCHAR},
+      lot_attr3 = #{lotAttr3,jdbcType=VARCHAR},
+      lot_attr4 = #{lotAttr4,jdbcType=VARCHAR},
+      lot_attr5 = #{lotAttr5,jdbcType=VARCHAR},
+      lot_attr6 = #{lotAttr6,jdbcType=VARCHAR},
+      lot_attr7 = #{lotAttr7,jdbcType=VARCHAR},
+      lot_attr8 = #{lotAttr8,jdbcType=VARCHAR},
+      lot_attr9 = #{lotAttr9,jdbcType=DECIMAL},
+      lot_attr10 = #{lotAttr10,jdbcType=DECIMAL},
+      lot_attr11 = #{lotAttr11,jdbcType=DECIMAL},
+      lot_attr12 = #{lotAttr12,jdbcType=DECIMAL},
+      lot_attr13 = #{lotAttr13,jdbcType=DATE},
+      lot_attr14 = #{lotAttr14,jdbcType=DATE},
+      lot_attr15 = #{lotAttr15,jdbcType=DATE},
+      lot_attr16 = #{lotAttr16,jdbcType=DATE},
+      user_def1 = #{userDef1,jdbcType=VARCHAR},
+      user_def2 = #{userDef2,jdbcType=VARCHAR},
+      user_def3 = #{userDef3,jdbcType=VARCHAR},
+      user_def4 = #{userDef4,jdbcType=VARCHAR},
+      user_def5 = #{userDef5,jdbcType=VARCHAR},
+      user_def6 = #{userDef6,jdbcType=VARCHAR},
+      user_def7 = #{userDef7,jdbcType=TIMESTAMP},
+      user_def8 = #{userDef8,jdbcType=TIMESTAMP},
+      user_def9 = #{userDef9,jdbcType=DECIMAL},
+      user_def10 = #{userDef10,jdbcType=DECIMAL},
+      goods_line_money = #{goodsLineMoney,jdbcType=DECIMAL},
+      from_warehouse_code = #{fromWarehouseCode,jdbcType=VARCHAR},
+      goods_pic = #{goodsPic,jdbcType=VARCHAR},
+      created_by_user_id = #{createdByUserId,jdbcType=BIGINT},
+      created_by_user = #{createdByUser,jdbcType=VARCHAR},
+      created_office = #{createdOffice,jdbcType=VARCHAR},
+      created_dtm_loc = #{createdDtmLoc,jdbcType=TIMESTAMP},
+      created_time_zone = #{createdTimeZone,jdbcType=VARCHAR},
+      updated_by_user_id = #{updatedByUserId,jdbcType=BIGINT},
+      updated_by_user = #{updatedByUser,jdbcType=VARCHAR},
+      updated_office = #{updatedOffice,jdbcType=VARCHAR},
+      updated_dtm_loc = #{updatedDtmLoc,jdbcType=TIMESTAMP},
+      updated_time_zone = #{updatedTimeZone,jdbcType=VARCHAR},
+      record_version = #{recordVersion,jdbcType=BIGINT},
+      container_code = #{containerCode,jdbcType=VARCHAR},
+      owner_code = #{ownerCode,jdbcType=VARCHAR},
+      sales_type_flag = #{salesTypeFlag,jdbcType=TINYINT},
+      not_allow_return = #{notAllowReturn,jdbcType=TINYINT},
+      inventory_group = #{inventoryGroup,jdbcType=TINYINT},
+      serial_no = #{serialNo,jdbcType=VARCHAR}
+    where oub_shipment_detail_id = #{oubShipmentDetailId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select oub_shipment_detail_id, oub_shipment_header_id, shipment_no, shipment_line_no, 
+    warehouse_code, status_code, erp_order_no, erp_order_line_no, item_code, item_name, 
+    client_code, client_name, inventory_type, batch_no, inventory_quality, country_of_origin, 
+    exp_date, mfg_date, received_date, po_no, sales_no, sales_status, inventory_status, 
+    brand_code, brand_name, vendor_code, vendor_name, req_qty, req_uom, orig_allocation_qty, 
+    allocation_qty, allocation_uom, picked_qty, picked_uom, oqc_qty, oqc_uom, sorting_qty, 
+    sorting_ep_qty, sorting_uom, oub_qty, oub_uom, oub_date, oub_user, priority, exception_type, 
+    exception_desc, exception_approach, exception_qty, price, item_retail_price, item_net_price, 
+    req_weight, weight_uom, item_class_code, is_gift, is_immediate_need, ec_mode, req_volume, 
+    req_volume_uom, brand_type, channel_type, fulfillment_type, item_size, package_code, 
+    package_name, return_max_uom, return_max_qty, oqc_itemscan_field1, oqc_itemscan_value1, 
+    oqc_itemscan_field2, oqc_itemscan_value2, oqc_column_field1, oqc_column_value1, oqc_column_field2, 
+    oqc_column_value2, oqc_itemdesc_value1, oqc_itemdesc_value2, no_po, en_company_desc, 
+    en_item_desc, gross_weight, sale_brand_id, reserved_qty, inv_lot_id, lot_attr1, lot_attr2, 
+    lot_attr3, lot_attr4, lot_attr5, lot_attr6, lot_attr7, lot_attr8, lot_attr9, lot_attr10, 
+    lot_attr11, lot_attr12, lot_attr13, lot_attr14, lot_attr15, lot_attr16, user_def1, 
+    user_def2, user_def3, user_def4, user_def5, user_def6, user_def7, user_def8, user_def9, 
+    user_def10, goods_line_money, from_warehouse_code, goods_pic, created_by_user_id, 
+    created_by_user, created_office, created_dtm_loc, created_time_zone, updated_by_user_id, 
+    updated_by_user, updated_office, updated_dtm_loc, updated_time_zone, record_version, 
+    container_code, owner_code, sales_type_flag, not_allow_return, inventory_group, serial_no
+    from oub_shipment_detail
+    where oub_shipment_detail_id = #{oubShipmentDetailId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select oub_shipment_detail_id, oub_shipment_header_id, shipment_no, shipment_line_no, 
+    warehouse_code, status_code, erp_order_no, erp_order_line_no, item_code, item_name, 
+    client_code, client_name, inventory_type, batch_no, inventory_quality, country_of_origin, 
+    exp_date, mfg_date, received_date, po_no, sales_no, sales_status, inventory_status, 
+    brand_code, brand_name, vendor_code, vendor_name, req_qty, req_uom, orig_allocation_qty, 
+    allocation_qty, allocation_uom, picked_qty, picked_uom, oqc_qty, oqc_uom, sorting_qty, 
+    sorting_ep_qty, sorting_uom, oub_qty, oub_uom, oub_date, oub_user, priority, exception_type, 
+    exception_desc, exception_approach, exception_qty, price, item_retail_price, item_net_price, 
+    req_weight, weight_uom, item_class_code, is_gift, is_immediate_need, ec_mode, req_volume, 
+    req_volume_uom, brand_type, channel_type, fulfillment_type, item_size, package_code, 
+    package_name, return_max_uom, return_max_qty, oqc_itemscan_field1, oqc_itemscan_value1, 
+    oqc_itemscan_field2, oqc_itemscan_value2, oqc_column_field1, oqc_column_value1, oqc_column_field2, 
+    oqc_column_value2, oqc_itemdesc_value1, oqc_itemdesc_value2, no_po, en_company_desc, 
+    en_item_desc, gross_weight, sale_brand_id, reserved_qty, inv_lot_id, lot_attr1, lot_attr2, 
+    lot_attr3, lot_attr4, lot_attr5, lot_attr6, lot_attr7, lot_attr8, lot_attr9, lot_attr10, 
+    lot_attr11, lot_attr12, lot_attr13, lot_attr14, lot_attr15, lot_attr16, user_def1, 
+    user_def2, user_def3, user_def4, user_def5, user_def6, user_def7, user_def8, user_def9, 
+    user_def10, goods_line_money, from_warehouse_code, goods_pic, created_by_user_id, 
+    created_by_user, created_office, created_dtm_loc, created_time_zone, updated_by_user_id, 
+    updated_by_user, updated_office, updated_dtm_loc, updated_time_zone, record_version, 
+    container_code, owner_code, sales_type_flag, not_allow_return, inventory_group, serial_no
+    from oub_shipment_detail
+  </select>
+</mapper>
